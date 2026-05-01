@@ -1,29 +1,34 @@
-import Icones from './icons.js';
-
 const passos = [
-  { icone: Icones.calendario, titulo: 'Escolha o serviço', desc: 'Selecione o serviço que precisa e preencha o formulário.' },
-  { icone: Icones.relogio,    titulo: 'Confirmamos contigo', desc: 'Entramos em contacto para confirmar data e hora.' },
-  { icone: Icones.check,      titulo: 'Pronto!', desc: 'A nossa equipa vai até si e faz o trabalho com excelência.' },
+  { num: '01', titulo: 'Escolha o serviço', desc: 'Selecione o serviço que precisa e clique em agendar. Simples e rápido.' },
+  { num: '02', titulo: 'Confirmamos consigo', desc: 'Entramos em contacto para confirmar a data e hora mais conveniente.' },
+  { num: '03', titulo: 'Trabalho impecável', desc: 'A nossa equipa vai até si e entrega um resultado que vai surpreender.' },
 ];
 
 const ComoFunciona = {
   render() {
-    const html = passos.map((p, i) => `
-      <div class="como-passo">
-        <div class="como-passo__numero">${i + 1}</div>
-        <div class="como-passo__icone">${p.icone}</div>
-        <h3 class="como-passo__titulo">${p.titulo}</h3>
-        <p class="como-passo__desc">${p.desc}</p>
+    const cards = passos.map(p => `
+      <div class="flip-card" tabindex="0" aria-label="${p.titulo}: ${p.desc}">
+        <div class="flip-card__inner">
+          <div class="flip-card__frente">
+            <div class="flip-card__num">${p.num}</div>
+            <h3 class="flip-card__titulo-f">${p.titulo}</h3>
+          </div>
+          <div class="flip-card__verso">
+            <h3 class="flip-card__titulo-v">${p.titulo}</h3>
+            <p class="flip-card__desc">${p.desc}</p>
+          </div>
+        </div>
       </div>`).join('');
 
     return `
       <section class="como-funciona" id="como-funciona" aria-labelledby="como-titulo">
         <div class="container">
           <div class="secao-header">
-            <h2 class="secao-titulo" id="como-titulo">Como funciona</h2>
-            <p class="secao-subtitulo">Simples, rápido e sem complicação</p>
+            <span class="secao-tag">Como funciona</span>
+            <h2 class="secao-titulo" id="como-titulo">Simples, rápido e sem complicação</h2>
+            <p class="secao-subtitulo">Passe o rato sobre cada etapa para saber mais.</p>
           </div>
-          <div class="como-grid">${html}</div>
+          <div class="como-grid">${cards}</div>
         </div>
       </section>`;
   }
