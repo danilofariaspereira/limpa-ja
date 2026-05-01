@@ -3,28 +3,22 @@ const Hero = {
     return `
       <section class="hero" id="inicio" aria-labelledby="hero-titulo">
 
-        <!-- Vídeo de fundo via Pexels embed -->
-        <div class="hero__video-wrap" aria-hidden="true">
-          <iframe
-            class="hero__video-iframe"
-            src="https://player.vimeo.com/video/517090081?autoplay=1&loop=1&muted=1&background=1&quality=720p"
-            allow="autoplay; fullscreen"
-            frameborder="0"
-            title=""
-            aria-hidden="true"
-            tabindex="-1">
-          </iframe>
-        </div>
+        <!-- Vídeo de fundo — Mixkit free license -->
+        <video
+          class="hero__video"
+          autoplay muted loop playsinline
+          aria-hidden="true"
+          tabindex="-1"
+          poster="assets/logo-limpa-ja.png">
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-cleaning-the-fabric-of-a-sofa-34661-large.mp4" type="video/mp4">
+        </video>
 
         <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
         <div class="hero__overlay" aria-hidden="true"></div>
 
         <div class="container hero__content">
           <div class="hero__left">
-            <div class="hero__badge">
-              <span class="hero__badge-dot"></span>
-              Limpeza profissional em Portugal
-            </div>
+            <p class="hero__tag">Limpeza profissional em Portugal</p>
             <h1 class="hero__titulo" id="hero-titulo">
               A sua casa merece<br><span>o melhor cuidado</span>
             </h1>
@@ -44,11 +38,6 @@ const Hero = {
               </a>
             </div>
           </div>
-        </div>
-
-        <div class="hero__scroll" aria-hidden="true">
-          <span>scroll</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9l-7 7-7-7"/></svg>
         </div>
       </section>`;
   },

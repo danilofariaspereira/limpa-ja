@@ -29,26 +29,19 @@
   display: flex; align-items: center;
   overflow: hidden; background: var(--azul-escuro);
 }
-.hero__video-wrap {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  overflow: hidden; pointer-events: none;
-}
-.hero__video-iframe {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 177.78vh; /* 16:9 */
-  height: 56.25vw; /* 16:9 */
-  min-width: 100%; min-height: 100%;
-  opacity: 0.28;
-  border: none;
+.hero__video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; opacity: 0.35;
+  pointer-events: none;
 }
 .hero__canvas {
-  position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 1;
 }
 .hero__overlay {
   position: absolute; inset: 0; pointer-events: none; z-index: 2;
-  background: linear-gradient(105deg, rgba(15,23,42,0.93) 0%, rgba(15,23,42,0.75) 55%, rgba(15,23,42,0.5) 100%);
+  background: linear-gradient(105deg, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.7) 55%, rgba(15,23,42,0.45) 100%);
 }
 .hero__content {
   position: relative; z-index: 3;
@@ -56,29 +49,22 @@
 }
 .hero__left {
   display: flex; flex-direction: column; gap: 1.5rem;
-  max-width: 580px;
+  max-width: 560px;
 }
-.hero__badge {
-  display: inline-flex; align-items: center; gap: 0.45rem;
-  color: rgba(125,211,252,0.9); font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
+.hero__tag {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--azul-vivo);
 }
-.hero__badge-dot { width: 5px; height: 5px; background: var(--azul-vivo); border-radius: 50%; animation: pulso 2s infinite; flex-shrink: 0; }
-@keyframes pulso { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.5)} }
 .hero__titulo {
   font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 800;
   color: var(--branco); letter-spacing: -0.04em; line-height: 1.1;
 }
 .hero__titulo span { color: var(--azul-vivo); }
-.hero__subtitulo { font-size: 1.05rem; color: rgba(255,255,255,0.68); max-width: 460px; line-height: 1.7; }
-.hero__acoes { display: flex; flex-wrap: wrap; gap: 0.875rem; }
-.hero__scroll {
-  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 3;
-  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
-  color: rgba(255,255,255,0.35); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-  animation: flutua 2.5s ease-in-out infinite;
+.hero__subtitulo {
+  font-size: 1.05rem; color: rgba(255,255,255,0.68);
+  max-width: 440px; line-height: 1.7;
 }
-@keyframes flutua { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+.hero__acoes { display: flex; flex-wrap: wrap; gap: 0.875rem; }
 
 /* ── SERVIÇOS ── */
 .servicos { padding: 6rem 0; background: var(--branco); }
@@ -134,27 +120,37 @@
   position: relative; overflow: hidden;
   background: var(--azul-escuro);
 }
-/* Imagem de fundo com fade nas laterais */
 .cta-faixa__bg {
   position: absolute; inset: 0;
-  background-image: url('https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=1600');
-  background-size: cover; background-position: center;
-  opacity: 0.18;
+  background-image: url('https://images.pexels.com/photos/6195924/pexels-photo-6195924.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-size: cover; background-position: center 30%;
+  opacity: 0.22;
 }
 .cta-faixa__bg::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to right, var(--azul-escuro) 0%, transparent 30%, transparent 70%, var(--azul-escuro) 100%);
+  background: linear-gradient(to right, var(--azul-escuro) 0%, transparent 35%, transparent 65%, var(--azul-escuro) 100%);
 }
 .cta-faixa__bg::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to bottom, var(--azul-escuro) 0%, transparent 20%, transparent 80%, var(--azul-escuro) 100%);
+  background: linear-gradient(to bottom, var(--azul-escuro) 0%, transparent 25%, transparent 75%, var(--azul-escuro) 100%);
 }
 .cta-faixa__inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
 .cta-faixa__titulo { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; color: var(--branco); letter-spacing: -0.03em; }
 .cta-faixa__sub { font-size: 1.05rem; color: rgba(255,255,255,0.7); max-width: 480px; }
 .cta-faixa__acoes { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
 
-/* ── MODAL SERVIÇO ── */
+/* ── FOOTER ── */
+.footer {
+  background: #060d18;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 2.5rem 0;
+}
+.footer__inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; }
+.footer__logo { height: 32px; width: auto; object-fit: contain; margin-bottom: 0.25rem; filter: brightness(0) invert(1); opacity: 0.7; }
+.footer__copy { font-size: 0.85rem; color: rgba(255,255,255,0.4); }
+.footer__criado { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+.footer__criado a { color: rgba(255,255,255,0.5); font-weight: 600; transition: color var(--trans); }
+.footer__criado a:hover { color: var(--branco); }
 .modal-servico-overlay {
   position: fixed; inset: 0; z-index: 600;
   background: rgba(15,23,42,0.75); backdrop-filter: blur(6px);
@@ -191,15 +187,6 @@
 }
 .modal-servico__item svg { flex-shrink: 0; color: var(--azul-vivo); }
 .modal-servico__cta { width: 100%; }
-
-/* ── FOOTER ── */
-.footer { background: var(--azul-escuro); padding: 2.5rem 0; }
-.footer__inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; }
-.footer__logo { height: 32px; width: auto; object-fit: contain; opacity: 0.85; margin-bottom: 0.25rem; filter: brightness(0) invert(1); }
-.footer__copy { font-size: 0.85rem; color: rgba(255,255,255,0.45); }
-.footer__criado { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
-.footer__criado a { color: rgba(255,255,255,0.55); font-weight: 600; transition: color var(--trans); }
-.footer__criado a:hover { color: var(--branco); }
 
 /* ── MODAL ── */
 .modal-overlay {
