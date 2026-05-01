@@ -5,6 +5,7 @@ const CtaFinal = {
     const msg = encodeURIComponent('Olá, vim através do vosso site e gostaria de agendar um serviço.');
     return `
       <section class="cta-faixa" id="contacto" aria-labelledby="cta-titulo">
+        <div class="cta-faixa__bg" aria-hidden="true"></div>
         <div class="container cta-faixa__inner">
           <h2 class="cta-faixa__titulo" id="cta-titulo">Pronto para uma limpeza impecável?</h2>
           <p class="cta-faixa__sub">Agende agora ou fale connosco diretamente pelo WhatsApp.</p>
