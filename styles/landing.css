@@ -78,7 +78,12 @@
 
 /* ── CURSOR PERSONALIZADO (borrifador SVG) ── */
 body {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg transform='rotate(-35,16,16)'%3E%3Crect x='13' y='4' width='6' height='10' rx='2' fill='%230ea5e9'/%3E%3Crect x='11' y='12' width='10' height='14' rx='3' fill='%230284c7'/%3E%3Crect x='21' y='14' width='5' height='3' rx='1.5' fill='%230ea5e9'/%3E%3Ccircle cx='27' cy='12' r='2' fill='%2338bdf8' opacity='0.7'/%3E%3Ccircle cx='29' cy='9' r='1.2' fill='%2338bdf8' opacity='0.5'/%3E%3Ccircle cx='26' cy='8' r='1' fill='%2338bdf8' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E") 4 4, auto;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg transform='rotate(-40 20 20)'%3E%3C!-- cabo --%3E%3Crect x='17' y='22' width='6' height='12' rx='3' fill='%230284c7'/%3E%3C!-- corpo do borrifador --%3E%3Crect x='13' y='10' width='14' height='14' rx='4' fill='%230ea5e9'/%3E%3C!-- gatilho --%3E%3Crect x='10' y='16' width='5' height='3' rx='1.5' fill='%230284c7'/%3E%3C!-- bico --%3E%3Crect x='25' y='13' width='6' height='3' rx='1.5' fill='%2338bdf8'/%3E%3C!-- gotas --%3E%3Ccircle cx='34' cy='11' r='1.8' fill='%2338bdf8' opacity='0.8'/%3E%3Ccircle cx='37' cy='8' r='1.2' fill='%2338bdf8' opacity='0.55'/%3E%3Ccircle cx='33' cy='7' r='1' fill='%2338bdf8' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E") 6 6, auto;
+}
+
+/* Pointer: borrifador com mais gotas (hover em botões/links) */
+a, button, [role='button'], .servico-card, .flip-card, .navbar__toggle, .modal-servico__fechar, .modal__fechar {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg transform='rotate(-40 20 20)'%3E%3Crect x='17' y='22' width='6' height='12' rx='3' fill='%230284c7'/%3E%3Crect x='13' y='10' width='14' height='14' rx='4' fill='%230ea5e9'/%3E%3Crect x='10' y='16' width='5' height='3' rx='1.5' fill='%230284c7'/%3E%3Crect x='25' y='13' width='6' height='3' rx='1.5' fill='%2338bdf8'/%3E%3Ccircle cx='34' cy='11' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='37' cy='8' r='1.5' fill='%2338bdf8' opacity='0.8'/%3E%3Ccircle cx='33' cy='7' r='1.2' fill='%2338bdf8' opacity='0.65'/%3E%3Ccircle cx='36' cy='5' r='1' fill='%2338bdf8' opacity='0.5'/%3E%3Ccircle cx='38' cy='11' r='0.8' fill='%2338bdf8' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E") 6 6, pointer;
 }
 
 /* ── SERVIÇOS ── */
