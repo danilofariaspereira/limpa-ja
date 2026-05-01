@@ -3,15 +3,19 @@ const Hero = {
     return `
       <section class="hero" id="inicio" aria-labelledby="hero-titulo">
 
-        <!-- Vídeo de fundo — Mixkit free license -->
-        <video
-          class="hero__video"
-          autoplay muted loop playsinline
-          aria-hidden="true"
-          tabindex="-1"
-          poster="assets/logo-limpa-ja.png">
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-cleaning-the-fabric-of-a-sofa-34661-large.mp4" type="video/mp4">
-        </video>
+        <!-- Vídeo de fundo YouTube — limpeza profissional -->
+        <div class="hero__video-wrap" aria-hidden="true">
+          <iframe
+            class="hero__video-iframe"
+            src="https://www.youtube.com/embed/TnFHMBMJFkY?autoplay=1&mute=1&loop=1&playlist=TnFHMBMJFkY&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            frameborder="0"
+            title=""
+            aria-hidden="true"
+            tabindex="-1">
+          </iframe>
+        </div>
 
         <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
         <div class="hero__overlay" aria-hidden="true"></div>
