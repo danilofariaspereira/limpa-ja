@@ -29,13 +29,13 @@
   display: flex; align-items: center;
   overflow: hidden; background: var(--azul-escuro);
 }
-/* Foto de fundo — profissional limpando sofá com equipamento */
+/* Foto de fundo — limpeza de almofada, bem iluminada */
 .hero::before {
   content: '';
   position: absolute; inset: 0; z-index: 0;
-  background-image: url('https://images.pexels.com/photos/4401535/pexels-photo-4401535.jpeg?auto=compress&cs=tinysrgb&w=1920');
-  background-size: cover; background-position: center 30%;
-  opacity: 0.45;
+  background-image: url('https://images.pexels.com/photos/30238384/pexels-photo-30238384.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  background-size: cover; background-position: center 20%;
+  opacity: 0.55;
 }
 .hero__canvas {
   position: absolute; inset: 0; width: 100%; height: 100%;
@@ -53,10 +53,20 @@
 .hero__subtitulo { font-size: 1.05rem; color: rgba(255,255,255,0.68); max-width: 440px; line-height: 1.7; }
 .hero__acoes { display: flex; flex-wrap: wrap; gap: 0.875rem; }
 
-/* ── CURSOR — aspirador SVG em TODO o site ── */
-*, *::before, *::after {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3C!-- corpo principal --%3E%3Crect x='8' y='14' width='16' height='10' rx='5' fill='%230ea5e9'/%3E%3C!-- tubo de sucção --%3E%3Crect x='22' y='17' width='10' height='4' rx='2' fill='%230284c7'/%3E%3C!-- boca de sucção --%3E%3Crect x='30' y='15' width='3' height='8' rx='1.5' fill='%231e3a5f'/%3E%3C!-- rodas --%3E%3Ccircle cx='12' cy='25' r='3' fill='%230284c7'/%3E%3Ccircle cx='20' cy='25' r='3' fill='%230284c7'/%3E%3C!-- cabo --%3E%3Cpath d='M8 19 Q2 16 3 10' stroke='%230ea5e9' stroke-width='2.5' stroke-linecap='round' fill='none'/%3E%3C!-- partículas de sujidade --%3E%3Ccircle cx='33' cy='14' r='1' fill='%2338bdf8' opacity='0.7'/%3E%3Ccircle cx='35' cy='18' r='0.8' fill='%2338bdf8' opacity='0.5'/%3E%3Ccircle cx='34' cy='22' r='1' fill='%2338bdf8' opacity='0.6'/%3E%3C/svg%3E") 8 19, auto !important;
-}/* ── SERVIÇOS ── */
+/* ── CURSOR PERSONALIZADO — controlado via JS ── */
+body { cursor: none !important; }
+*, *::before, *::after { cursor: none !important; }
+
+#cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  transition: transform 80ms ease;
+}
+#cursor svg { display: block; }/* ── SERVIÇOS ── */
 .servicos { padding: 6rem 0; background: var(--branco); }
 .servicos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 .servico-card {
@@ -112,11 +122,11 @@
 }
 .cta-faixa__bg {
   position: absolute; inset: 0;
-  background-image: url('https://images.pexels.com/photos/4401538/pexels-photo-4401538.jpeg?auto=compress&cs=tinysrgb&w=1600');
-  background-size: cover; background-position: center;
-  opacity: 0.35;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+  background-image: url('https://images.pexels.com/photos/4401537/pexels-photo-4401537.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-size: cover; background-position: center 40%;
+  opacity: 0.45;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%);
 }
 .cta-faixa__inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
 .cta-faixa__titulo { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; color: var(--branco); letter-spacing: -0.03em; }

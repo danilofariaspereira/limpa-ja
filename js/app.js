@@ -23,6 +23,19 @@ Navbar.bind();
 Hero.bindCanvas();
 Servicos.bind();
 
+// ── Cursor personalizado ──
+const cursorEl = document.getElementById('cursor');
+if (cursorEl && window.matchMedia('(pointer: fine)').matches) {
+  document.addEventListener('mousemove', e => {
+    cursorEl.style.left = e.clientX + 'px';
+    cursorEl.style.top  = e.clientY + 'px';
+  }, { passive: true });
+  document.addEventListener('mouseleave', () => { cursorEl.style.opacity = '0'; });
+  document.addEventListener('mouseenter', () => { cursorEl.style.opacity = '1'; });
+} else if (cursorEl) {
+  cursorEl.style.display = 'none';
+}
+
 // ── Modal ──
 const overlay  = document.getElementById('modal-overlay');
 const fecharBtn = document.getElementById('modal-fechar');
