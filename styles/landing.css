@@ -76,12 +76,12 @@
 }
 .hero__acoes { display: flex; flex-wrap: wrap; gap: 0.875rem; }
 
-/* ── CURSOR PERSONALIZADO (borrifador SVG) ── */
+/* ── CURSOR PERSONALIZADO (bolha de limpeza) ── */
 body,
 a, button, [role='button'], .servico-card, .flip-card,
 .navbar__toggle, .modal-servico__fechar, .modal__fechar,
 input, select, textarea, label {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3C!-- frasco redondo --%3E%3Cellipse cx='22' cy='30' rx='10' ry='12' fill='%230ea5e9' opacity='0.85'/%3E%3C!-- líquido dentro --%3E%3Cellipse cx='22' cy='33' rx='7' ry='7' fill='%230284c7' opacity='0.5'/%3E%3C!-- pescoço --%3E%3Crect x='19' y='16' width='6' height='6' rx='2' fill='%230284c7'/%3E%3C!-- cabeça do gatilho --%3E%3Crect x='17' y='12' width='10' height='5' rx='2' fill='%231e3a5f'/%3E%3C!-- bico --%3E%3Cpath d='M27 13 L36 8' stroke='%231e3a5f' stroke-width='2.5' stroke-linecap='round'/%3E%3C!-- gatilho --%3E%3Cpath d='M17 15 Q12 17 13 21' stroke='%231e3a5f' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3C!-- gotas saindo do bico --%3E%3Ccircle cx='37' cy='6' r='1.8' fill='%2338bdf8' opacity='0.9'/%3E%3Ccircle cx='40' cy='4' r='1.2' fill='%2338bdf8' opacity='0.65'/%3E%3Ccircle cx='38' cy='2' r='0.9' fill='%2338bdf8' opacity='0.45'/%3E%3C/svg%3E") 8 8, auto;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3C!-- bolha principal --%3E%3Ccircle cx='16' cy='18' r='12' fill='none' stroke='%230ea5e9' stroke-width='1.8' opacity='0.9'/%3E%3C!-- brilho interno --%3E%3Cellipse cx='12' cy='13' rx='3.5' ry='2' fill='white' opacity='0.55' transform='rotate(-30 12 13)'/%3E%3C!-- bolhinhas satélite --%3E%3Ccircle cx='26' cy='8' r='4' fill='none' stroke='%2338bdf8' stroke-width='1.4' opacity='0.7'/%3E%3Cellipse cx='24.5' cy='6.5' rx='1.2' ry='0.7' fill='white' opacity='0.5' transform='rotate(-30 24.5 6.5)'/%3E%3Ccircle cx='5' cy='6' r='2.5' fill='none' stroke='%2338bdf8' stroke-width='1.2' opacity='0.55'/%3E%3Ccircle cx='27' cy='20' r='1.8' fill='none' stroke='%2338bdf8' stroke-width='1' opacity='0.45'/%3E%3C/svg%3E") 16 18, auto;
 }
 
 /* ── SERVIÇOS ── */
