@@ -29,12 +29,12 @@
   display: flex; align-items: center;
   overflow: hidden; background: var(--azul-escuro);
 }
-/* Foto de fundo — limpeza de almofada, bem iluminada */
+/* Foto de fundo — imagem fornecida pelo cliente */
 .hero::before {
   content: '';
   position: absolute; inset: 0; z-index: 0;
-  background-image: url('https://images.pexels.com/photos/30238384/pexels-photo-30238384.jpeg?auto=compress&cs=tinysrgb&w=1920');
-  background-size: cover; background-position: center 20%;
+  background-image: url('../assets/banner.png');
+  background-size: cover; background-position: center;
   opacity: 0.55;
 }
 .hero__canvas {
@@ -116,22 +116,40 @@ body { cursor: none !important; }
 
 /* ── CTA FAIXA ── */
 .cta-faixa {
-  padding: 6rem 0;
+  padding: 5rem 0;
+  background: #e0f2fe;
   position: relative; overflow: hidden;
-  background: #0a1628;
 }
-.cta-faixa__bg {
-  position: absolute; inset: 0;
-  background-image: url('https://images.pexels.com/photos/4401537/pexels-photo-4401537.jpeg?auto=compress&cs=tinysrgb&w=1600');
-  background-size: cover; background-position: center 40%;
-  opacity: 0.45;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%);
+.cta-faixa__bg { display: none; }
+.cta-faixa__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
 }
-.cta-faixa__inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
-.cta-faixa__titulo { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; color: var(--branco); letter-spacing: -0.03em; }
-.cta-faixa__sub { font-size: 1.05rem; color: rgba(255,255,255,0.7); max-width: 480px; }
-.cta-faixa__acoes { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+.cta-faixa__img-wrap {
+  border-radius: var(--raio-xl);
+  overflow: hidden;
+  box-shadow: var(--sombra-lg);
+  max-height: 420px;
+}
+.cta-faixa__img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.cta-faixa__texto { display: flex; flex-direction: column; gap: 1.25rem; }
+.cta-faixa__titulo {
+  font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800;
+  color: var(--azul-escuro); letter-spacing: -0.03em; line-height: 1.2;
+}
+.cta-faixa__sub { font-size: 1.05rem; color: var(--cinza-texto); max-width: 420px; }
+.cta-faixa__acoes { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+@media (min-width: 768px) {
+  .cta-faixa__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 /* ── FOOTER ── */
 .footer {
