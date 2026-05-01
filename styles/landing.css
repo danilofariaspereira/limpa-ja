@@ -173,35 +173,62 @@ body {
   opacity: 0; pointer-events: none; transition: opacity var(--trans);
 }
 .modal-servico-overlay--aberto { opacity: 1; pointer-events: auto; }
+
+/* Mobile: empilhado (imagem em cima, texto embaixo) */
 .modal-servico {
   background: var(--branco); border-radius: var(--raio-xl);
-  width: 100%; max-width: 560px; position: relative;
+  width: 100%; max-width: 480px; position: relative;
   box-shadow: 0 24px 64px rgba(0,0,0,0.2);
   transform: translateY(20px); transition: transform var(--trans);
   overflow: hidden;
 }
 .modal-servico-overlay--aberto .modal-servico { transform: translateY(0); }
+
 .modal-servico__img {
   width: 100%; height: 220px; object-fit: cover; display: block;
 }
-.modal-servico__corpo { padding: 2rem; }
+.modal-servico__corpo { padding: 1.75rem; }
 .modal-servico__fechar {
-  position: absolute; top: 1rem; right: 1rem;
+  position: absolute; top: 1rem; right: 1rem; z-index: 2;
   width: 36px; height: 36px; border-radius: var(--raio-full);
-  background: rgba(255,255,255,0.9); backdrop-filter: blur(4px);
+  background: rgba(255,255,255,0.92); backdrop-filter: blur(4px);
   display: flex; align-items: center; justify-content: center;
   color: var(--texto); box-shadow: var(--sombra-sm);
   transition: background var(--trans);
 }
 .modal-servico__fechar:hover { background: var(--branco); }
-.modal-servico__nome { font-size: 1.4rem; font-weight: 800; color: var(--texto); margin-bottom: 0.75rem; }
-.modal-servico__lista { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+.modal-servico__nome { font-size: 1.35rem; font-weight: 800; color: var(--texto); margin-bottom: 1rem; }
+.modal-servico__lista { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
 .modal-servico__item {
   display: flex; align-items: center; gap: 0.6rem;
   font-size: 0.9rem; color: var(--cinza-texto);
 }
 .modal-servico__item svg { flex-shrink: 0; color: var(--azul-vivo); }
 .modal-servico__cta { width: 100%; }
+
+/* Desktop: lado a lado 800x600 */
+@media (min-width: 768px) {
+  .modal-servico {
+    max-width: 800px;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+  }
+  .modal-servico__img {
+    width: 50%; height: 100%;
+    flex-shrink: 0;
+    border-radius: 0;
+  }
+  .modal-servico__corpo {
+    width: 50%;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+  }
+  .modal-servico__nome { font-size: 1.5rem; }
+}
 
 /* ── MODAL ── */
 .modal-overlay {
