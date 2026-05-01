@@ -1,0 +1,28 @@
+:root {
+  --cor-primaria: #1a3a5c;
+  --cor-primaria-escura: #0f2540;
+  --cor-destaque: #00a8e8;
+  --cor-destaque-hover: #0090cc;
+  --cor-fundo: #ffffff;
+  --cor-fundo-alt: #f4f8fc;
+  --cor-borda: #e2e8f0;
+  --cor-texto: #1a2e3b;
+  --cor-texto-suave: #64748b;
+  --cor-branco: #ffffff;
+  --cor-whatsapp: #25d366;
+  --cor-whatsapp-hover: #1db954;
+
+  --fonte: 'Inter', system-ui, sans-serif;
+
+  --raio-sm: 0.375rem;
+  --raio-md: 0.5rem;
+  --raio-lg: 0.75rem;
+  --raio-xl: 1rem;
+  --raio-full: 9999px;
+
+  --sombra-sm: 0 1px 4px rgba(0,0,0,0.06);
+  --sombra-md: 0 4px 16px rgba(0,0,0,0.08);
+  --sombra-lg: 0 8px 32px rgba(0,0,0,0.12);
+
+  --transicao: 200ms ease;
+}
