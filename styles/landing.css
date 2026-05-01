@@ -77,13 +77,11 @@
 .hero__acoes { display: flex; flex-wrap: wrap; gap: 0.875rem; }
 
 /* ── CURSOR PERSONALIZADO (borrifador SVG) ── */
-body {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg transform='rotate(-40 20 20)'%3E%3C!-- cabo --%3E%3Crect x='17' y='22' width='6' height='12' rx='3' fill='%230284c7'/%3E%3C!-- corpo do borrifador --%3E%3Crect x='13' y='10' width='14' height='14' rx='4' fill='%230ea5e9'/%3E%3C!-- gatilho --%3E%3Crect x='10' y='16' width='5' height='3' rx='1.5' fill='%230284c7'/%3E%3C!-- bico --%3E%3Crect x='25' y='13' width='6' height='3' rx='1.5' fill='%2338bdf8'/%3E%3C!-- gotas --%3E%3Ccircle cx='34' cy='11' r='1.8' fill='%2338bdf8' opacity='0.8'/%3E%3Ccircle cx='37' cy='8' r='1.2' fill='%2338bdf8' opacity='0.55'/%3E%3Ccircle cx='33' cy='7' r='1' fill='%2338bdf8' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E") 6 6, auto;
-}
-
-/* Pointer: borrifador com mais gotas (hover em botões/links) */
-a, button, [role='button'], .servico-card, .flip-card, .navbar__toggle, .modal-servico__fechar, .modal__fechar {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg transform='rotate(-40 20 20)'%3E%3Crect x='17' y='22' width='6' height='12' rx='3' fill='%230284c7'/%3E%3Crect x='13' y='10' width='14' height='14' rx='4' fill='%230ea5e9'/%3E%3Crect x='10' y='16' width='5' height='3' rx='1.5' fill='%230284c7'/%3E%3Crect x='25' y='13' width='6' height='3' rx='1.5' fill='%2338bdf8'/%3E%3Ccircle cx='34' cy='11' r='2' fill='%2338bdf8'/%3E%3Ccircle cx='37' cy='8' r='1.5' fill='%2338bdf8' opacity='0.8'/%3E%3Ccircle cx='33' cy='7' r='1.2' fill='%2338bdf8' opacity='0.65'/%3E%3Ccircle cx='36' cy='5' r='1' fill='%2338bdf8' opacity='0.5'/%3E%3Ccircle cx='38' cy='11' r='0.8' fill='%2338bdf8' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E") 6 6, pointer;
+body,
+a, button, [role='button'], .servico-card, .flip-card,
+.navbar__toggle, .modal-servico__fechar, .modal__fechar,
+input, select, textarea, label {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3C!-- frasco redondo --%3E%3Cellipse cx='22' cy='30' rx='10' ry='12' fill='%230ea5e9' opacity='0.85'/%3E%3C!-- líquido dentro --%3E%3Cellipse cx='22' cy='33' rx='7' ry='7' fill='%230284c7' opacity='0.5'/%3E%3C!-- pescoço --%3E%3Crect x='19' y='16' width='6' height='6' rx='2' fill='%230284c7'/%3E%3C!-- cabeça do gatilho --%3E%3Crect x='17' y='12' width='10' height='5' rx='2' fill='%231e3a5f'/%3E%3C!-- bico --%3E%3Cpath d='M27 13 L36 8' stroke='%231e3a5f' stroke-width='2.5' stroke-linecap='round'/%3E%3C!-- gatilho --%3E%3Cpath d='M17 15 Q12 17 13 21' stroke='%231e3a5f' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3C!-- gotas saindo do bico --%3E%3Ccircle cx='37' cy='6' r='1.8' fill='%2338bdf8' opacity='0.9'/%3E%3Ccircle cx='40' cy='4' r='1.2' fill='%2338bdf8' opacity='0.65'/%3E%3Ccircle cx='38' cy='2' r='0.9' fill='%2338bdf8' opacity='0.45'/%3E%3C/svg%3E") 8 8, auto;
 }
 
 /* ── SERVIÇOS ── */
@@ -211,11 +209,11 @@ a, button, [role='button'], .servico-card, .flip-card, .navbar__toggle, .modal-s
 .modal-servico__item svg { flex-shrink: 0; color: var(--azul-vivo); }
 .modal-servico__cta { width: 100%; }
 
-/* Desktop: lado a lado 800x600 */
+/* Desktop: lado a lado 700x500 */
 @media (min-width: 768px) {
   .modal-servico {
-    max-width: 800px;
-    height: 600px;
+    max-width: 700px;
+    height: 500px;
     display: flex;
     flex-direction: row;
   }
