@@ -23,18 +23,29 @@ Navbar.bind();
 Hero.bindCanvas();
 Servicos.bind();
 
-// ── Cursor personalizado ──
-const cursorEl = document.getElementById('cursor');
-if (cursorEl && window.matchMedia('(pointer: fine)').matches) {
-  document.addEventListener('mousemove', e => {
-    cursorEl.style.left = e.clientX + 'px';
-    cursorEl.style.top  = e.clientY + 'px';
-  }, { passive: true });
-  document.addEventListener('mouseleave', () => { cursorEl.style.opacity = '0'; });
-  document.addEventListener('mouseenter', () => { cursorEl.style.opacity = '1'; });
-} else if (cursorEl) {
-  cursorEl.style.display = 'none';
-}
+// ── Cursor branco no hero ──
+(function () {
+  const img = new Image();
+  img.src = 'assets/cursor-spray.png';
+  img.onload = () => {
+    const c = document.createElement('canvas');
+    c.width = img.width; c.height = img.height;
+    const ctx = c.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const data = ctx.getImageData(0, 0, c.width, c.height);
+    for (let i = 0; i < data.data.length; i += 4) {
+      if (data.data[i + 3] > 10) {           // pixel visível → torna branco
+        data.data[i]     = 255;
+        data.data[i + 1] = 255;
+        data.data[i + 2] = 255;
+      }
+    }
+    ctx.putImageData(data, 0, 0);
+    const url = c.toDataURL('image/png');
+    const hero = document.getElementById('inicio');
+    if (hero) hero.style.cursor = `url("${url}") 20 20, auto`;
+  };
+})();
 
 // ── Modal ──
 const overlay  = document.getElementById('modal-overlay');
@@ -53,10 +64,8 @@ function fecharModal() {
   document.body.style.overflow = '';
 }
 
-// Botões que abrem o modal
-['hero-cta', 'navbar-cta', 'navbar-cta-mobile', 'cta-final-btn'].forEach(id => {
-  document.getElementById(id)?.addEventListener('click', abrirModal);
-});
+// Botões que abrem o modal — nenhum restante
+
 
 fecharBtn.addEventListener('click', fecharModal);
 overlay.addEventListener('click', e => { if (e.target === overlay) fecharModal(); });

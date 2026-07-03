@@ -10,7 +10,7 @@ const Navbar = {
             <a href="#servicos" class="navbar__link">Serviços</a>
             <a href="#como-funciona" class="navbar__link">Como funciona</a>
             <a href="#contacto" class="navbar__link">Contacto</a>
-            <button class="btn btn-primario btn-md" id="navbar-cta">Agendar</button>
+            <a href="https://wa.me/351920529136?text=Olá%2C%20vim%20através%20do%20vosso%20site%20e%20gostaria%20de%20agendar%20um%20serviço." target="_blank" rel="noopener noreferrer" class="btn btn-primario btn-md" id="navbar-cta">Agendar</a>
           </nav>
           <button class="navbar__toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
@@ -20,7 +20,7 @@ const Navbar = {
           <a href="#servicos" class="navbar__mobile-link">Serviços</a>
           <a href="#como-funciona" class="navbar__mobile-link">Como funciona</a>
           <a href="#contacto" class="navbar__mobile-link">Contacto</a>
-          <button class="btn btn-primario btn-md navbar__mobile-cta" id="navbar-cta-mobile">Agendar</button>
+          <a href="https://wa.me/351920529136?text=Olá%2C%20vim%20através%20do%20vosso%20site%20e%20gostaria%20de%20agendar%20um%20serviço." target="_blank" rel="noopener noreferrer" class="btn btn-primario btn-md navbar__mobile-cta" id="navbar-cta-mobile">Agendar</a>
         </div>
       </header>`;
   },

@@ -53,20 +53,12 @@
 .hero__subtitulo { font-size: 1.05rem; color: rgba(255,255,255,0.68); max-width: 440px; line-height: 1.7; }
 .hero__acoes { display: flex; flex-wrap: wrap; gap: 0.875rem; }
 
-/* ── CURSOR PERSONALIZADO — controlado via JS ── */
-body { cursor: none !important; }
-*, *::before, *::after { cursor: none !important; }
-
-#cursor {
-  position: fixed;
-  pointer-events: none;
-  z-index: 99999;
-  top: 0; left: 0;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: difference;
-  transition: transform 80ms ease;
-}
-#cursor svg { display: block; }/* ── SERVIÇOS ── */
+/* ── CURSOR PERSONALIZADO ── */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: url('../assets/cursor-spray.png') 20 20, auto !important;
+  }
+}/* ── SERVIÇOS ── */
 .servicos { padding: 6rem 0; background: var(--branco); }
 .servicos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 .servico-card {
