@@ -91,16 +91,27 @@
 .flip-card { height: 220px; perspective: 1000px; cursor: pointer; }
 .flip-card__inner {
   position: relative; width: 100%; height: 100%;
-  transform-style: preserve-3d; transition: transform 0.55s cubic-bezier(.4,0,.2,1);
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(.4,0,.2,1);
 }
-.flip-card:hover .flip-card__inner, .flip-card:focus .flip-card__inner { transform: rotateY(180deg); }
+/* Desktop: hover vira */
+.flip-card:hover .flip-card__inner,
+.flip-card:focus .flip-card__inner { transform: rotateY(180deg); }
+/* Mobile/tap: classe vira (tem prioridade sobre hover) */
+.flip-card--virado .flip-card__inner { transform: rotateY(180deg) !important; }
+
 .flip-card__frente, .flip-card__verso {
-  position: absolute; inset: 0; backface-visibility: hidden;
+  position: absolute; inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: var(--raio-xl); padding: 2rem;
   display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1rem;
 }
 .flip-card__frente { background: var(--branco); border: 1px solid var(--cinza-borda); box-shadow: var(--sombra-sm); }
-.flip-card__verso { background: linear-gradient(135deg, var(--azul-escuro), var(--azul-medio)); transform: rotateY(180deg); }
+.flip-card__verso {
+  background: linear-gradient(135deg, var(--azul-escuro), var(--azul-medio));
+  transform: rotateY(180deg);
+}
 .flip-card__num { font-size: 2rem; font-weight: 800; color: var(--azul-vivo); line-height: 1; }
 .flip-card__titulo-f { font-size: 1rem; font-weight: 700; color: var(--texto); }
 .flip-card__titulo-v { font-size: 1rem; font-weight: 700; color: var(--branco); }
@@ -246,12 +257,24 @@
 
 /* ── RESPONSIVO ── */
 @media (max-width: 768px) {
+  /* Hero centralizado */
+  .hero__content { text-align: center; }
+  .hero__left { align-items: center; max-width: 100%; }
+  .hero__subtitulo { text-align: center; }
+  .hero__acoes { justify-content: center; }
+
+  /* Serviços centralizados */
   .servicos-grid { grid-template-columns: 1fr; }
+  .secao-header { text-align: center; }
+
+  /* Flip cards no mobile: coluna única, tap já funciona via classe global */
   .como-grid { grid-template-columns: 1fr; }
-  .flip-card { height: auto; perspective: none; }
-  .flip-card__inner { transform: none !important; position: static; transform-style: flat; }
-  .flip-card__frente { position: static; backface-visibility: visible; }
-  .flip-card__verso { display: none; }
+  .flip-card { height: 220px; }
+
+  /* CTA faixa centralizada */
+  .cta-faixa__texto { align-items: center; text-align: center; }
+  .cta-faixa__sub { text-align: center; }
+  .cta-faixa__acoes { justify-content: center; }
 }
 @media (min-width: 769px) and (max-width: 1023px) {
   .servicos-grid { grid-template-columns: repeat(2, 1fr); }
@@ -262,3 +285,18 @@
   .navbar__toggle { display: none; }
   .servicos-grid { grid-template-columns: repeat(4, 1fr); }
 }
+
+/* ── BOTÃO VOLTAR AO TOPO ── */
+.btn-topo {
+  position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 300;
+  width: 48px; height: 48px; border-radius: var(--raio-full);
+  background: var(--azul-vivo); color: var(--branco);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(14,165,233,0.45);
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--trans), transform var(--trans), background var(--trans);
+  transform: translateY(12px);
+  border: none;
+}
+.btn-topo--visivel { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.btn-topo:hover { background: var(--azul-vivo-hover); }

@@ -47,6 +47,29 @@ Servicos.bind();
   };
 })();
 
+// ── Botão voltar ao topo ──
+const btnTopo = document.getElementById('btn-topo');
+window.addEventListener('scroll', () => {
+  btnTopo.classList.toggle('btn-topo--visivel', window.scrollY > 400);
+}, { passive: true });
+btnTopo.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ── Flip cards (tap para virar — funciona em mobile e desktop) ──
+const flipCards = document.querySelectorAll('.flip-card');
+flipCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const jáVirado = card.classList.contains('flip-card--virado');
+    flipCards.forEach(c => c.classList.remove('flip-card--virado'));
+    if (!jáVirado) card.classList.add('flip-card--virado');
+  });
+});
+
+// Troca subtítulo em touch
+if (window.matchMedia('(pointer: coarse)').matches) {
+  const sub = document.querySelector('#como-funciona .secao-subtitulo');
+  if (sub) sub.textContent = 'Toque em cada etapa para saber mais.';
+}
+
 // ── Modal ──
 const overlay  = document.getElementById('modal-overlay');
 const fecharBtn = document.getElementById('modal-fechar');
