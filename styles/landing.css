@@ -270,6 +270,9 @@
   /* Flip cards no mobile: coluna única, tap já funciona via classe global */
   .como-grid { grid-template-columns: 1fr; }
   .flip-card { height: 220px; }
+  .flip-card__frente { transition: box-shadow var(--trans), border-color var(--trans); }
+  .flip-card:active .flip-card__frente { border-color: var(--azul-vivo); box-shadow: 0 0 0 3px rgba(14,165,233,0.25); }
+  .flip-card--virado .flip-card__frente { border-color: var(--azul-vivo); }
 
   /* CTA faixa centralizada */
   .cta-faixa__texto { align-items: center; text-align: center; }
