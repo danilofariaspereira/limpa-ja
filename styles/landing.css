@@ -76,6 +76,18 @@
   transition: transform var(--trans);
 }
 .servico-card:hover .servico-card__icone { transform: scale(1.1) rotate(-3deg); }
+.servico-card__foto {
+  width: 100%; height: 160px;
+  border-radius: var(--raio-lg);
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+.servico-card__foto img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 0.4s ease;
+}
+.servico-card:hover .servico-card__foto img { transform: scale(1.06); }
 .servico-card__nome { font-size: 1.1rem; font-weight: 700; color: var(--texto); }
 .servico-card__desc { font-size: 0.875rem; color: var(--cinza-texto); line-height: 1.6; flex: 1; }
 .servico-card__cta {

@@ -2,10 +2,9 @@ const WHATSAPP = '351920529136';
 
 const servicos = [
   {
-    icone: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M3 15h18M7 5v14M17 5v14"/></svg>`,
     nome: 'Limpeza de Tapetes',
     desc: 'Remoção profunda de sujidade, ácaros e manchas.',
-    img: 'https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: 'assets/limpeza-tapete.jpg',
     detalhes: [
       'Remoção de ácaros, fungos e bactérias',
       'Eliminação de manchas difíceis',
@@ -15,10 +14,9 @@ const servicos = [
     ],
   },
   {
-    icone: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10V7a2 2 0 012-2h14a2 2 0 012 2v3"/><path d="M1 14a2 2 0 002 2h1v2h2v-2h12v2h2v-2h1a2 2 0 002-2v-2a2 2 0 00-2-2H3a2 2 0 00-2 2v2z"/></svg>`,
     nome: 'Limpeza de Sofás',
     desc: 'Higienização completa de todos os tipos de tecido.',
-    img: 'https://images.pexels.com/photos/6195924/pexels-photo-6195924.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: 'assets/limpeza-de-sofa.jpeg',
     detalhes: [
       'Higienização profunda de tecidos e couro',
       'Remoção de manchas, gordura e odores',
@@ -28,10 +26,9 @@ const servicos = [
     ],
   },
   {
-    icone: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M2 12h20M6 7v10M18 7v10"/></svg>`,
     nome: 'Limpeza de Colchões',
     desc: 'Eliminação de ácaros e bactérias para um sono saudável.',
-    img: 'https://images.pexels.com/photos/6585598/pexels-photo-6585598.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: 'assets/limpeza-de-colchao.jpeg',
     detalhes: [
       'Eliminação de ácaros e microrganismos',
       'Remoção de manchas e odores',
@@ -41,10 +38,9 @@ const servicos = [
     ],
   },
   {
-    icone: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>`,
     nome: 'Impermeabilização',
     desc: 'Proteção duradoura contra líquidos e manchas.',
-    img: 'https://images.pexels.com/photos/4107130/pexels-photo-4107130.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: 'assets/impermeabilizaçoa.jpg',
     detalhes: [
       'Proteção contra líquidos e manchas',
       'Tratamento de longa duração',
@@ -63,7 +59,9 @@ const Servicos = {
     const cards = servicos.map((s, i) => `
       <article class="servico-card" tabindex="0" role="button"
         aria-label="Ver detalhes de ${s.nome}" data-index="${i}">
-        <div class="servico-card__icone">${s.icone}</div>
+        <div class="servico-card__foto">
+          <img src="${s.img}" alt="${s.nome}" loading="lazy" />
+        </div>
         <h3 class="servico-card__nome">${s.nome}</h3>
         <p class="servico-card__desc">${s.desc}</p>
         <span class="servico-card__cta">
